@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public interface CMP {
+public interface CMP<T> {
+    int confronta(T c);
 }
