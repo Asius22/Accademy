@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public interface CmpToxicity {
+public interface CmpToxicity<T> extends CMP<T>{
+    int confrontaTossicita(T obj);
+
 }
