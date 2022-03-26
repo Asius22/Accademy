@@ -2,6 +2,7 @@ package artwork;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Collezione {
     private String name;
@@ -48,7 +49,16 @@ public class Collezione {
         return res.toString();
     }
 
-    public double princEncumbrace (ArtWork a){
+    public double princEncumbrace(ArtWork a) {
         return a.printEncumbrace();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        if (this == o) return true;
+        if (!(o instanceof Collezione other)) return false;
+        return this.name.equals(other.getName()) &&
+                this.collezione.equals(other.getCollezione());
     }
 }
