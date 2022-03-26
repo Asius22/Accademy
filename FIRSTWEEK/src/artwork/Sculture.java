@@ -58,4 +58,13 @@ public class Sculture extends ArtWork {
                 sculture.getWidth() == this.width;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() +
+                "{" +
+                "height=" + height +
+                ", width=" + width +
+                ", depth=" + depth +
+                '}';
+    }
 }

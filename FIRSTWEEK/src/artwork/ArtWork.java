@@ -36,4 +36,12 @@ public abstract class ArtWork {
         return getTitolo().equals(artWork.getTitolo()) && getArtista().equals(artWork.getArtista());
     }
 
+    @Override
+    public String toString() {
+        return this.getClass().getName() +
+                "{" +
+                "titolo='" + titolo + '\'' +
+                ", artista='" + artista + '\'' +
+                '}';
+    }
 }

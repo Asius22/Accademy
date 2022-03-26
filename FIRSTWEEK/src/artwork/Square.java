@@ -47,4 +47,13 @@ public class Square extends ArtWork {
     public int hashCode() {
         return Objects.hash(getHeight(), getWidth());
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "{" +
+                "height=" + height +
+                ", width=" + width +
+                '}';
+    }
 }
