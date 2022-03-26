@@ -26,7 +26,7 @@ public abstract class ArtWork {
         this.artista = artista;
     }
 
-    abstract double printEncumbrace();
+    public abstract double printEncumbrace();
 
     @Override
     public boolean equals(Object o) {
