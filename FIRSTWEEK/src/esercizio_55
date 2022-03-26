@@ -1,0 +1,12 @@
+Output programma:
+•	System.out.println(beta.f (gamma, arr) ) -> B1
+•	System.out.println ( gamma.f ( arr, alfa ) ) -> errore perché la classe C non ha un metodo f con parametri (A[], A)
+•	System.out.println ( gamma.f ( beta, alfa ) ) -> C2
+Lista delle firme per ogni chiamata a metodo:
+•	System.out.println(beta.f (gamma, arr) ): 
+o	Classe b metodo String f (B c, Object[] y)
+•	System.out.println ( gamma.f ( arr, alfa ) )
+o	Nessun metodo poiché né nella classe C né in B né in A c’è un metodo Object f( Object[] o, Object a )
+•	System.out.println ( gamma.f ( beta, alfa ) )
+o	Classe C metodo String f ( B x, Object y )
+
