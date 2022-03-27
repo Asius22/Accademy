@@ -44,7 +44,7 @@ public class Paziente {
         if (this == o) return true;
         if (!(o instanceof Paziente p)) return false;
         return getnTesera() == p.getnTesera() &&
-                getNomeMedico().equals(p.getNomeMedico());
+                getNomeMedico().equalsIgnoreCase(p.getNomeMedico());
     }
 
 }
