@@ -14,8 +14,7 @@ public class Test {
 
         AziendaSanitaria azienda = new AziendaSanitaria();
         azienda.setMedici(medici);
-        for (Paziente p : pazienti)
-            azienda.aggPaziente(p);
+        azienda.setPazienti(pazienti);
         System.out.println(azienda.listaMedico(medici.get(0)));
         System.out.println(azienda.statMedico());
     }
