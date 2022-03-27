@@ -20,6 +20,22 @@ public class AziendaSanitaria {
         }
     }
 
+    public List<Paziente> getPazienti() {
+        return pazienti;
+    }
+
+    public void setPazienti(List<Paziente> pazienti) {
+        this.pazienti = pazienti;
+    }
+
+    public List<Medico> getMedici() {
+        return medici;
+    }
+
+    public void setMedici(List<Medico> medici) {
+        this.medici = medici;
+    }
+
     private void aggRif(String nomeMedico, Paziente paziente) {
 
         for (Medico m : medici)
