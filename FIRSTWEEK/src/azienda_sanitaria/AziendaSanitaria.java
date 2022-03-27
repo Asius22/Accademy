@@ -25,7 +25,8 @@ public class AziendaSanitaria {
     }
 
     public void setPazienti(List<Paziente> pazienti) {
-        this.pazienti = pazienti;
+        for (Paziente p : pazienti)
+            aggPaziente(p);
     }
 
     public List<Medico> getMedici() {
