@@ -25,7 +25,7 @@ public class Medico {
         if (o == null) return false;
         if (this == o) return true;
         if (!(o instanceof Medico m)) return false;
-        return this.getNome().equals(m.getNome());
+        return this.getNome().equalsIgnoreCase(m.getNome());
     }
 
     @Override
