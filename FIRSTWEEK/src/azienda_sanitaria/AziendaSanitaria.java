@@ -1,30 +1,64 @@
 package azienda_sanitaria;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AziendaSanitaria {
     private List<Paziente> pazienti;
     private List<Medico> medici;
     private Map<Paziente, Medico> riferimenti;
 
-    public AziendaSanitaria(){
+    public AziendaSanitaria() {
         pazienti = new ArrayList<>();
         medici = new ArrayList<>();
         riferimenti = new HashMap<>();
     }
 
-    public void aggPaziente(Paziente p){
-        boolean esito;
-        if (!pazienti.contains(p))
-            esito = pazienti.add(p);
-        if (esito)
-            aggRif()
+    public void aggPaziente(Paziente p) {
+        if (!pazienti.contains(p)) {
+            pazienti.add(p);
+            aggRif(p.getNomeMedico().toLowerCase(), p);
+        }
     }
 
-    private void aggRif(String nomeMedico, int index){
+    private void aggRif(String nomeMedico, Paziente paziente) {
 
+        for (Medico m : medici)
+            if (m.getNome().toLowerCase().equals(nomeMedico))
+                riferimenti.put(paziente, m);
+    }
+
+    public ArrayList<Paziente> listaMedico(Medico m) {
+        ArrayList<Paziente> lista = new ArrayList<>();
+
+        for (Paziente p : pazienti) {
+            if (riferimenti.get(p).equals(m))
+                lista.add(p);
+        }
+        return lista;
+    }
+
+    public Medico statMedico() {
+        Map<Medico, Integer> res = new HashMap<>();
+        for (Map.Entry<Paziente, Medico> e : riferimenti.entrySet()) {
+            Medico m = e.getValue();
+            Integer getted = res.get(m);
+            res.put(m,
+                    (getted == null) ? 0 : getted + 1
+            );
+
+        }
+        return getMaxMap(res);
+    }
+
+    private Medico getMaxMap(Map<Medico, Integer> map) {
+        int max = 0;
+        Medico m = null;
+        for (Map.Entry<Medico, Integer> e : map.entrySet()) {
+            int i = e.getValue();
+            if (i > max) max = i;
+            m = e.getKey();
+        }
+
+        return m;
     }
 }
