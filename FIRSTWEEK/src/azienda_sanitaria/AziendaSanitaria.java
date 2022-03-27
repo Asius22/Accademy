@@ -38,10 +38,15 @@ public class AziendaSanitaria {
     }
 
     private void aggRif(String nomeMedico, Paziente paziente) {
-
+        Medico value = null;
         for (Medico m : medici)
             if (m.getNome().toLowerCase().equals(nomeMedico))
-                riferimenti.put(paziente, m);
+                value = riferimenti.put(paziente, m);
+
+        if (value == null) {
+            medici.add(new Medico(nomeMedico.toLowerCase()));
+            riferimenti.put(paziente, value);
+        }
     }
 
     public ArrayList<Paziente> listaMedico(Medico m) {
