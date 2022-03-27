@@ -28,5 +28,10 @@ public class Medico {
         return this.getNome().equals(m.getNome());
     }
 
-
+    @Override
+    public String toString() {
+        return this.getClass().getName() + "{" +
+                "nome='" + nome + '\'' +
+                '}';
+    }
 }
